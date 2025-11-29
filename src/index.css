@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer components {
+  .top-gradient-border {
+    @apply relative rounded;
+  }
+.top-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 6px;
+  width: 97%;
+  height: 4px; /* top border thickness */
+  background: linear-gradient(to left, #00b4ff, #00ff95); /* blue → green */
+  border-top-left-radius: 1rem; /* match rounded-2xl corners */
+  border-top-right-radius: 1rem;
+  opacity: 0.5;
+  animation: topBorderFade 2s infinite alternate;
+}
+
+@keyframes topBorderFade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+}
